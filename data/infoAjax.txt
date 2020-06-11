@@ -1,0 +1,24 @@
+Los parámetros más comunes que puede tener una llamada ajax son los siguientes:
+
+$.ajax({
+    async: true,                                                            //tipo de sincronia en la llamada, por defecto true
+    complete(),                                                             //funcion que se ejecuta despues de la respuesta, pase lo que pase
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',        //tipo de contenido que ENVIAMOS al servidor, por defecto 'application/x-www-form-urlencoded; charset=UTF-8'
+    context: document.body,                                                 //contexto del this para usar en las funciones callback
+    crossDomain: true,                                                      //para forzar una peticion crossDomain   
+    dataType: 'html',                                                       //tipo de dato que estamos esperando de vuelta del server
+    error(),                                                                //funcion que se ejecuta si se produce un error
+    headers:{}                                                              // headers de la peticion, se manda como un objeto
+    method: 'GET',                                                          //método de la peticion, por defecto GET
+    type: 'GET',                                                            // equivalente a method en versiones previas a la 1.9
+    statusCode: {404: ()=> alert( "page not found" )},                      //codigo a ejecutar si el codigo de respuesta es el indicado (se pueden poner verios)
+    success(),                                                              //funcion a ejecutar si la respuesta es OK
+    timeout: 2000,                                                          //timeout para ejecutar la llamada
+    url: 'www.google.com',                                                  // url de la peticion
+        }
+
+});
+
+para más informacion, visitar =>
+https://www.w3schools.com/jquery/ajax_ajax.asp
+https://www.arkaitzgarro.com/jquery/capitulo-7.html 

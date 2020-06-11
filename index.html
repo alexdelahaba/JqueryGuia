@@ -24,8 +24,10 @@
             <div class="row">
                 <div class="four columns">
                     <img src="img/logo.jpg"
+                         alt="imagen"
                          id="logo">
-                    <button id="consolesLogs">Ver consoles logs</button>
+                    <button id="consolesLogs">Ver consoles logs de funcionalidades</button>
+                    <button id="selectoresJquery">Ver consoles logs de selectores</button>
                     <button id="efectosCssHtml">Ver efectos css y html</button>
                 </div>
                 <div class="two columns u-pull-right">
@@ -35,18 +37,7 @@
                                  id="img-carrito">
                             <div id="carrito">
 
-                                <table id="lista-carrito"
-                                       class="u-full-width">
-                                    <thead>
-                                        <tr>
-                                            <th>Imagen</th>
-                                            <th>Nombre</th>
-                                            <th>Precio</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody></tbody>
-                                </table>
+
 
                                 <a href="#"
                                    id="vaciar-carrito"
@@ -65,7 +56,7 @@
             <div class="row">
                 <div class="six columns">
                     <div class="contenido-hero">
-                        <h2>Aprende algo nuevo</h2>
+                        <h2 id="tituloAprendeAlgoNuevo">Aprende algo nuevo</h2>
                         <p>Todos los cursos a $15</p>
                         <form action="#"
                               id="busqueda"
@@ -74,7 +65,8 @@
                             <input class="u-full-width"
                                    type="text"
                                    placeholder="¿Que te gustaría Aprender?"
-                                   id="buscador">
+                                   id="buscador"
+                                   value="Recuperable con el .val()">
                             <input type="submit"
                                    id="submit-buscador"
                                    class="submit-buscador">
@@ -121,6 +113,7 @@
                         <img src="img/estrellas.png">
                         <p class="precio">$200 <span class="u-pull-right ">$15</span></p>
                         <a href="#"
+                           target="_blank"
                            class="u-full-width button-primary button input agregar-carrito"
                            data-id="1">Agregar Al Carrito</a>
                     </div>
@@ -315,6 +308,114 @@
         </div>
         <!--.row-->
     </div>
+    <div class="tablaFinal">
+        <table>
+            <tr>
+                <th>Company</th>
+                <th>Country</th>
+            </tr>
+            <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+                <td>Berglunds snabbköp</td>
+                <td>Sweden</td>
+            </tr>
+            <tr>
+                <td>Centro comercial Moctezuma</td>
+                <td>Mexico</td>
+            </tr>
+            <tr>
+                <td>Ernst Handel</td>
+                <td>Austria</td>
+            </tr>
+            <tr>
+                <td>Island Trading</td>
+                <td>UK</td>
+            </tr>
+        </table>
+        <div class="pruebasEventos">
+            <form id="formularioPruebasEvento">
+                <input class="u-full-width"
+                       id="inputPruebasEvento"
+                       style="margin-top:50px"
+                       type="text"
+                       placeholder="Utilizando este input para pruebas con eventos">
+                <select id="selectPruebasEvento">
+                    <option value="option1"
+                            selected="selected">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+                <input type="submit">
+            </form>
+        </div>
+        <br>
+        <div class="pruebasEfectos">
+            <ol style="color: white;">
+                <li id="hide1">Efecto Hide(click)</li>
+                <li id="show1">Efecto Show del primer elemento(click)</li>
+                <li id="hide2">Efecto Hide con callback(click)</li>
+                <li id="show2">Efecto Show con callback(click)</li>
+                <li id="encadenado">Efecto encadenado de efectos(click)</li>
+                <li id="fades">Efecto encadenado de fades(click)</li>
+            </ol>
+        </div>
+        <br>
+        <div class="pruebasManipulacion">
+            <ol style="color: white;">
+                <input id="inputPruebasDOM"
+                       value="pruebas con el DOM"
+                       style="color: black;" />
+                <li id="DOM1">Obtener texto con .text()</li>
+                <li id="DOM2">
+                    <p pruebaDom="soyUnAtributoPersonalizado">Obtener html con .html()</p>
+                </li>
+                <li id="DOM3">Obtener valor del input con .val()</li>
+                <li id="DOM4">Modificar valor del elemento</li>
+                <li id="DOM5">Modificar valor del html del elemento</li>
+                <li id="DOM6">Modificar valor del input</li>
+            </ol>
+        </div>
+
+        <div class="pruebasNavegacion">
+            <button style="color: blanchedalmond;"
+                    id="obtenerPruebas">Obtener datos de jerarquias</button>
+            <ol style="color: white;">
+
+                <li id="NAV1">Soy el abuelo
+                    <ol>
+                        <li id="NAV2">Soy el padre
+                            <ol>
+                                <li id="NAV3">Soy el nieto</li>
+                                <li id="NAV4">Soy la nieta</li>
+                                <li>Soy el tercero</li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <p id="parrafoNav">Yo me he colado </p>
+                    <ol>
+                        <li>Soy otro padre pero anonimo
+                            <ol>
+                                <li>
+                                    <p>Soy otro nieto pero anonimo (estoy en un "p")</p>
+                                </li>
+                                <li>Soy otra nieta pero anonimo</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+
+            </ol>
+        </div>
+        <br>
+        <div>
+            <button id="pruebasAjax">Click para probar ajax</button>
+            <div id="respuestaAjax"></div>
+            <div id="respuestaAjax2"></div>
+        </div>
+
+    </div>
 
     <footer id="footer"
             class="footer">
@@ -323,27 +424,31 @@
                 <div class="four columns">
                     <nav id="principal"
                          class="menu">
-                        <a class="enlace"
-                           href="#">Para tu Negocio</a>
-                        <a class="enlace"
-                           href="#">Conviertete en Instructor</a>
-                        <a class="enlace"
-                           href="#">Aplicaciones Móviles</a>
-                        <a class="enlace"
-                           href="#">Soporte</a>
-                        <a class="enlace"
-                           href="#">Temas</a>
+                        <ol>
+                            <li><a class="enlace"
+                                   href="#">Para tu Negocio</a></li>
+                            <li><a class="enlace"
+                                   href="#">Conviertete en Instructor</a></li>
+                            <li><a class="enlace"
+                                   href="#">Aplicaciones Móviles</a></li>
+                            <li><a class="enlace"
+                                   href="#">Soporte</a></li>
+                            <li><a class="enlace"
+                                   href="#">Temas</a></li>
+                        </ol>
                     </nav>
                 </div>
                 <div class="four columns">
                     <nav id="secundaria"
                          class="menu">
-                        <a class="enlace"
-                           href="#">¿Quienes Somos?</a>
-                        <a class="enlace"
-                           href="#">Empleo</a>
-                        <a class="enlace"
-                           href="#">Blog</a>
+                        <ol>
+                            <li> <a class="enlace"
+                                   href="#">¿Quienes Somos?</a></li>
+                            <li> <a class="enlace"
+                                   href="#">Empleo</a></li>
+                            <li> <a class="enlace"
+                                   href="#">Blog</a></li>
+                        </ol>
                     </nav>
                 </div>
             </div>
@@ -351,7 +456,13 @@
     </footer>
 
 
-    <script src="js/seleccionEltos.js"></script>
+    <script src="js/funcionalidadesBasicas.js"></script>
+    <script src="js/seleccion.js"></script>
+    <script src="js/eventos.js"></script>
+    <script src="js/efectos.js"></script>
+    <script src="js/manipulandoDOM.js"></script>
+    <script src="js/navegacionDOM.js"></script>
+    <script src="js/AJAX.js"></script>
 
 </body>
 

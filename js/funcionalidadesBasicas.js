@@ -1,19 +1,3 @@
-//Referencia a elemento por id
-const titulo = $('#titulo');
-const imagenLogoUniversidad = $('#logo');
-//Referencia a elemento por class
-const subtitulo = $('.subtitulo');
-const icono1 = $('.icono1');
-const icono2 = $('.icono2');
-const icono3 = $('.icono3');
-const card1 = $('.card1');
-const card2 = $('.card2');
-const card3 = $('.card3');
-const card4 = $('.card4');
-const divBarraIconos = $('.barra');
-//Referencia genérica por cualquier atributo del tag
-const subsubtitulo = $('[atributoArbitrario="subsubtitulo"]');
-
 //Eventos para ver los resultados
 $('#consolesLogs').on('click', verConsolesLogs);
 $('#efectosCssHtml').on('click', verEfectos);
@@ -21,43 +5,49 @@ $('#efectosCssHtml').on('click', verEfectos);
 function verConsolesLogs() {
   //usando el método attr podemos acceder a cualquier atributo de un elemento para recuperarlo o para sobreescribirlo
   //devolver valor del atributo
-  console.log(1, imagenLogoUniversidad.attr('src'));
+  console.log('1-Funcionalidad', imagenLogoUniversidad.attr('src'));
 
   //el metodo hasClass sirve para saber si un elemento tiene una determinada clase
-  console.log(2, icono3.hasClass('icono', 'four'));
+  console.log('2-Funcionalidad', icono3.hasClass('icono', 'four'));
 
   //el .heigth() devuelve la altura de un elemento html
-  console.log(3, imagenLogoUniversidad.height());
+  console.log('3-Funcionalidad', imagenLogoUniversidad.height());
 
   //el metodo .html() sirve para devolver el tetxo html de un elemento
-  console.log(4, subsubtitulo.html());
+  console.log('4-Funcionalidad', subsubtitulo.html());
 
   //los metodos innerHeight y innerWidth devuelven los valores interiores de un elemento, es decir, excluye el borde
-  console.log(5, imagenLogoUniversidad.innerHeight());
-  console.log(6, imagenLogoUniversidad.innerWidth());
+  console.log('5-Funcionalidad', imagenLogoUniversidad.innerHeight());
+  console.log('6-Funcionalidad', imagenLogoUniversidad.innerWidth());
 
   //los metodos outerHeight y outerWidth devuelven los valores exteriores de un elemento, es decir, incluye el borde
-  console.log(7, imagenLogoUniversidad.outerHeight());
-  console.log(8, imagenLogoUniversidad.outerWidth());
+  console.log('7-Funcionalidad', imagenLogoUniversidad.outerHeight());
+  console.log('8-Funcionalidad', imagenLogoUniversidad.outerWidth());
 
   //el método offset() devuelve las coordenadas top y left relativas de un elemento html
-  console.log(9, imagenLogoUniversidad.offset());
+  console.log('9-Funcionalidad', imagenLogoUniversidad.offset());
 
   //el método offsetParent() devuelve el primer padre hacia arriba en la jerarquia
-  console.log(10, subtitulo.offsetParent());
+  console.log('10-Funcionalidad', subtitulo.offsetParent());
 
   //el metodo position() devuelve la posicion relativa(top y left) respecto al padre de un elemento
-  console.log(11, subtitulo.position());
+  console.log('11-Funcionalidad', subtitulo.position());
 
   //el metodo prop setea o devuelve una propiedad de un elemento
-  console.log(12, imagenLogoUniversidad.prop('width'));
+  console.log('12-Funcionalidad', imagenLogoUniversidad.prop('width'));
 
   //el metodo scrollLeft() y scrollTop() devuelven la positcion de la barra de scroll para un elto concreto
-  console.log(13, titulo.scrollLeft());
-  console.log(14, titulo.scrollTop());
+  console.log('13-Funcionalidad', titulo.scrollLeft());
+  console.log('14-Funcionalidad', titulo.scrollTop());
 
   //el metodo .tetx() devuelve el texto de un elemento html
-  console.log(15, titulo.text());
+  console.log('15-Funcionalidad', titulo.text());
+
+  //el método .val() se utiliza para recuperar el contenido de un input
+  console.log('16-Funcionalidad', buscador.val());
+
+  //con el width() devolvemos el valor del ancho de un elemento
+  console.log('17-Funcionalidad', imagenLogoUniversidad.width());
 }
 
 function verEfectos() {
@@ -145,7 +135,9 @@ function verEfectos() {
   //el metodo replaceAll() sirve para reemplazar un elemento html con otro
 
   setTimeout(() => {
-    $('<p>He sido modificado con replaceAll()</p>').replaceAll('.card');
+    $('<p>He sido modificado con replaceAll() y con wrapAll()</p>').replaceAll(
+      '.card'
+    );
   }, 3000);
 
   //el metodo replaceWith() sirve para reemplazar un elemento con otro
@@ -161,5 +153,21 @@ function verEfectos() {
   }, 2000);
   setTimeout(() => {
     subtitulo.toggleClass('negrita');
+  }, 5000);
+
+  //el metodo unwrap() se utiliza para eliminar el conteniente de un elemento
+  setTimeout(() => {
+    imagenLogoUniversidad.unwrap();
+  }, 1000);
+
+  //con el método wrap lo que hacemos es envolver el elemento seleccionado con el que mandamos por el metodo
+  tituloAprendeAlgoNuevo.wrap('<div class="verde"></div>');
+
+  //con el .wrapAll() envolvemos todos los elementos del tipo especificado en el mandado por el metodo
+  //con wrapInner() hacemos lo mismo que con wrapAll solo que el conteniente especificado se incorpora POR DENTRO
+  //es decir, con el All() se envuelve por fuera de la referencia, y con el Inner por dentro
+  setTimeout(() => {
+    $('.columns p').wrapAll('<div class="rojo"></div>');
+    tituloAprendeAlgoNuevo.wrapInner('<b></b>');
   }, 5000);
 }

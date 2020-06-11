@@ -1,0 +1,1 @@
+<p>Hola, yo soy un html cargado con Ajax</p>

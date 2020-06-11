@@ -87,6 +87,7 @@ ul {
 .contenido-hero form #buscador {
     height: 50px;
     margin-bottom: 0;
+    color: black;
 }
 
 .contenido-hero form .submit-buscador {
@@ -221,4 +222,36 @@ ul {
 
 .negrita {
     font-weight: bold;
+}
+
+#principal {
+    width: 100% !important;
+}
+
+.tablaFinal {
+    margin-left: 50px;
+}
+
+.pruebasEventos {
+    width: 500px;
+    height: 200px;
+    background-color: cornflowerblue;
+}
+
+.pruebasEfectos {
+    width: 500px;
+    height: 200px;
+    background-color: forestgreen;
+}
+
+.pruebasManipulacion {
+    width: 500px;
+
+    background-color: goldenrod;
+}
+
+.pruebasNavegacion {
+    width: 500px;
+
+    background-color: darkslategray;
 }
